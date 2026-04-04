@@ -1,0 +1,23 @@
+node_modules/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+
+# Runtime logs and artifacts
+*.log
+cookies.txt
+
+# Tool/runtime output directories
+eaphammer/logs/*
+eaphammer/loot/*
+eaphammer/run/*
+eaphammer/tmp/*
+
+# Keep placeholder stub in tmp
+!eaphammer/tmp/.stub

